@@ -3,8 +3,9 @@ swagger: "2.0"
 x-collection-name: Box
 x-complete: 0
 info:
-  title: Box Get Legal hold policy assignments
-  description: Get list of assignments for a single Policy.
+  title: Box Create New Legal Hold Policy Assignment
+  description: Create a new Assignment, which will apply the Legal Hold Policy to
+    the target of the Assignment.
   version: 1.0.0
 host: api.box.com
 basePath: /2.0
@@ -134,6 +135,27 @@ paths:
       - Hold
       - Policies
       - ""
+      - Assignments
+  /legal_hold_policy_assignments:
+    post:
+      summary: Create New Legal Hold Policy Assignment
+      description: Create a new Assignment, which will apply the Legal Hold Policy
+        to the target of the Assignment.
+      operationId: createLegalHoldPolicyAssignment
+      x-api-path-slug: legal-hold-policy-assignments-post
+      parameters:
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/holder'
+      responses:
+        200:
+          description: OK
+      tags:
+      - Documents
+      - Legal
+      - Hold
+      - Policy
       - Assignments
 x-streamrank:
   polling_total_time_average: 0

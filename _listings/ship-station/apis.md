@@ -10,11 +10,46 @@ image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/l
 x-kinRank: "7"
 x-alexaRank: "0"
 tags: Hold
-created: "2018-08-25"
-modified: "2018-08-25"
+created: "2018-08-27"
+modified: "2018-08-27"
 url: https://raw.githubusercontent.com/streamdata-gallery-topics/hold/master/_listings/ship-station/apis.md
 specificationVersion: "0.14"
-apis: []
+apis:
+- name: Ship Station Developer Portal - Hold Order Until
+  x-api-slug: ordersholduntil-post
+  description: |-
+    This method will change the status of the given order to On Hold until the date specified, when the status will automatically change to Awaiting Shipment.
+
+    The body of this request should specify the following attributes:
+
+    Name               |Data Type          |Description
+    -------------------|-------------------|-------------------
+    ``orderId`` | number, required | Identifies the order that will be held.
+    ``holdUntilDate`` | string, required | Date when order is moved from ``on_hold`` status to ``awaiting_shipment``.
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/ShipStation-stacked-blue.png
+  humanURL: http://bit.ly/_ShipStation
+  baseURL: https://ssapi.shipstation.com//
+  tags: Shipping, Relative Data, Service API
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/hold/master/_listings/ship-station/ordersholduntil-post-openapi.md
+- name: Ship Station Developer Portal - Restore Order from On Hold
+  x-api-slug: ordersrestorefromhold-post
+  description: |-
+    This method will change the status of the given order from On Hold to Awaiting Shipment. This endpoint is used when a holdUntil Date is attached to an order.
+
+    The body of this request should specify the following attributes:
+
+    Name               |Data Type          |Description
+    -------------------|-------------------|-------------------
+    ``orderId`` | number, required | Identifies the order that will be restored to ``awaiting_shipment`` from ``on_hold``.
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/ShipStation-stacked-blue.png
+  humanURL: http://bit.ly/_ShipStation
+  baseURL: https://ssapi.shipstation.com//
+  tags: Shipping, Relative Data, Service API
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/hold/master/_listings/ship-station/ordersrestorefromhold-post-openapi.md
 x-common:
 - type: x-website
   url: http://bit.ly/_ShipStation

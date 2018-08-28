@@ -3,8 +3,9 @@ swagger: "2.0"
 x-collection-name: Box
 x-complete: 0
 info:
-  title: Box Get Legal Hold Policies
-  description: Get a list of Legal Hold Policies that belong to your Enterprise.
+  title: Box Update Existing Legal Hold Policy
+  description: Update existing Legal Hold Policy. Only name and description can be
+    modified.
   version: 1.0.0
 host: api.box.com
 basePath: /2.0
@@ -52,6 +53,28 @@ paths:
       - in: query
         name: policy_name
         description: Case insensitive prefix-match filter on Policy name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Documents
+      - Legal
+      - Hold
+      - Policies
+  /legal_hold_policies/{ID}:
+    put:
+      summary: Update Existing Legal Hold Policy
+      description: Update existing Legal Hold Policy. Only name and description can
+        be modified.
+      operationId: updateLegalHoldPolicy
+      x-api-path-slug: legal-hold-policiesid-put
+      parameters:
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/holder'
+      - in: path
+        name: ID
       responses:
         200:
           description: OK

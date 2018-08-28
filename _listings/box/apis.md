@@ -7,11 +7,25 @@ image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/162-box.jp
 x-kinRank: "9"
 x-alexaRank: "445"
 tags: Hold
-created: "2018-08-25"
-modified: "2018-08-25"
+created: "2018-08-27"
+modified: "2018-08-27"
 url: https://raw.githubusercontent.com/streamdata-gallery-topics/hold/master/_listings/box/apis.md
 specificationVersion: "0.14"
 apis:
+- name: Box - Create New Legal Hold Policy
+  x-api-slug: legal-hold-policies-post
+  description: Create a new Legal Hold Policy. Optional date filter may be passed.
+    If Policy has a date filter, any Custodian assignments will apply only to file
+    versions created or uploaded inside of the date range.
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/162-box.jpg
+  humanURL: http://box.com
+  baseURL: https://api.box.com//2.0
+  tags: Files, Collaboration, Sharing, Storage, Storage, Stack Network, Stack, Productivity,
+    SaaS, Technology, Enterprise, API Provider, Profiles, Publish, Service API, Relative
+    Data, Relative StreamRank, Streams, Backups
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/hold/master/_listings/box/legal-hold-policies-post-openapi.md
 - name: Box - Get Legal Hold Policies
   x-api-slug: legal-hold-policies-get
   description: Get a list of Legal Hold Policies that belong to your Enterprise.
@@ -26,6 +40,19 @@ apis:
     url: https://raw.githubusercontent.com/streamdata-gallery-topics/hold/master/_listings/box/legal-hold-policies-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-topics/hold/master/_listings/box/legal-hold-policies-get-openapi.md
+- name: Box - Update Existing Legal Hold Policy
+  x-api-slug: legal-hold-policiesid-put
+  description: Update existing Legal Hold Policy. Only name and description can be
+    modified.
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/162-box.jpg
+  humanURL: http://box.com
+  baseURL: https://api.box.com//2.0
+  tags: Files, Collaboration, Sharing, Storage, Storage, Stack Network, Stack, Productivity,
+    SaaS, Technology, Enterprise, API Provider, Profiles, Publish, Service API, Relative
+    Data, Relative StreamRank, Streams, Backups
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/hold/master/_listings/box/legal-hold-policiesid-put-openapi.md
 - name: Box - Get Legal Hold Policy
   x-api-slug: legal-hold-policiesid-get
   description: Get details of a single Legal Hold Policy
@@ -70,6 +97,19 @@ apis:
     url: https://raw.githubusercontent.com/streamdata-gallery-topics/hold/master/_listings/box/legal-hold-policiesidassignments-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-topics/hold/master/_listings/box/legal-hold-policiesidassignments-get-openapi.md
+- name: Box - Create New Legal Hold Policy Assignment
+  x-api-slug: legal-hold-policy-assignments-post
+  description: Create a new Assignment, which will apply the Legal Hold Policy to
+    the target of the Assignment.
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/162-box.jpg
+  humanURL: http://box.com
+  baseURL: https://api.box.com//2.0
+  tags: Files, Collaboration, Sharing, Storage, Storage, Stack Network, Stack, Productivity,
+    SaaS, Technology, Enterprise, API Provider, Profiles, Publish, Service API, Relative
+    Data, Relative StreamRank, Streams, Backups
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/hold/master/_listings/box/legal-hold-policy-assignments-post-openapi.md
 - name: Box - Get Legal Hold Policy Assignment
   x-api-slug: legal-hold-policy-assignmentsassignment-id-get
   description: Get details of a single assignment.

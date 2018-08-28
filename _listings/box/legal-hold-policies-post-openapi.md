@@ -3,8 +3,10 @@ swagger: "2.0"
 x-collection-name: Box
 x-complete: 0
 info:
-  title: Box Get Legal Hold Policies
-  description: Get a list of Legal Hold Policies that belong to your Enterprise.
+  title: Box Create New Legal Hold Policy
+  description: Create a new Legal Hold Policy. Optional date filter may be passed.
+    If Policy has a date filter, any Custodian assignments will apply only to file
+    versions created or uploaded inside of the date range.
   version: 1.0.0
 host: api.box.com
 basePath: /2.0
@@ -28,30 +30,6 @@ paths:
         name: body
         schema:
           $ref: '#/definitions/holder'
-      responses:
-        200:
-          description: OK
-      tags:
-      - Documents
-      - Legal
-      - Hold
-      - Policies
-    get:
-      summary: Get Legal Hold Policies
-      description: Get a list of Legal Hold Policies that belong to your Enterprise.
-      operationId: getLegalHoldPolicies
-      x-api-path-slug: legal-hold-policies-get
-      parameters:
-      - in: query
-        name: limit
-        description: Limit result size to this number
-      - in: query
-        name: marker
-        description: Take from next_marker column of a prior call to get the next
-          page
-      - in: query
-        name: policy_name
-        description: Case insensitive prefix-match filter on Policy name
       responses:
         200:
           description: OK
